@@ -1,0 +1,63 @@
+﻿@model IEnumerable<S1G6_PVFAPP.Models.SalesPerson>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesPersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesPersonPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesPersonEmailID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesPerson1.SalesPersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SalesPerson2.SalesPersonName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Territory.TerritoryName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesPersonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesPersonPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesPersonEmailID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesPerson1.SalesPersonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SalesPerson2.SalesPersonName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Territory.TerritoryName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.SalesPersonID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.SalesPersonID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.SalesPersonID })
+        </td>
+    </tr>
+}
+
+</table>
